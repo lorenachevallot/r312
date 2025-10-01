@@ -30,8 +30,8 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        port: 22002
-        source: "dist/*"
+        port: 22028
+        source: "package.json, package-lock.json, dist/*"
         target: "/var/www/r312/"
         strip_components: 1
         rm: false
@@ -43,7 +43,7 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        port: 22002
+        port: 22028
         script: |
           cd /var/www/r312/server
           npm ci
